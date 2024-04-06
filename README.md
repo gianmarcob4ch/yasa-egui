@@ -22,7 +22,7 @@ The program has been ran and tested in
 
 ``` bash
 git clone https://github.com/gianmarcob4ch/yasa-egui.git
-cd Yasa-egui
+cd yasa-egui
 cargo run
 ```
 
