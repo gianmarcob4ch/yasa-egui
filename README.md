@@ -21,7 +21,7 @@ The program has been ran and tested in
 ## Testing locally Linux and macOS
 
 ``` bash
-git clone https://github.com/enfff/Yasa-egui.git
+git clone https://github.com/gianmarcob4ch/yasa-egui.git
 cd Yasa-egui
 cargo run
 ```
