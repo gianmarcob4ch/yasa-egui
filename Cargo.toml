@@ -1,0 +1,40 @@
+[package]
+name = "yasa"
+version = "0.1.0"
+authors = ["Gianmarco Bachiorrini <s309909@studenti.polito.it>", "Davide Colaiacomo <s313372@studenti.polito.it>", "Francesca Di Mella <s315084@studenti.polito.it>"]
+edition = "2021"
+rust-version = "1.71"
+
+
+[dependencies]
+
+screenshots = "0.6.0"
+
+image = { version = "0.24", default-features = false, features = ["png", "jpeg", "gif"] }
+imageproc = "0.23.0"
+
+egui = "0.22.0"
+egui_extras = "0.22.0"
+arboard = "3.3.0"
+epaint = "0.22.0"   # egui paint module
+eframe = { version = "0.22.0", default-features = false, features = ["accesskit", "default_fonts", "glow"] }
+#log = "0.4"
+chrono = "0.4.1"
+ahash = "0.8.6"
+
+# Extra packages for notifications
+egui-toast = "0.8.1"
+egui-modal = "=0.2.4"
+
+display-info = "0.4.8"
+
+# native:
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+#env_logger = "0.10"
+
+[profile.release]
+opt-level = 2 # fast and small wasm
+
+# Optimize all dependencies even in debug builds:
+[profile.dev.package."*"]
+opt-level = 2
