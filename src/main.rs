@@ -8,7 +8,6 @@ use crate::app::Views;
 
 #[cfg(not(target_arch = "wasm32"))]
 fn main() -> eframe::Result<()> {
-    //env_logger::init(); 
 
     let native_options = eframe::NativeOptions {
         min_window_size: Some([300.0, 200.0].into()),
@@ -37,7 +36,4 @@ impl eframe::App for YasaApp {
         }
     }
 
-    fn clear_color(&self, _visuals: &egui::Visuals) -> [f32; 4] {
-        egui::Color32::TRANSPARENT.to_normalized_gamma_f32()
-    }
 }
