@@ -35,5 +35,9 @@ impl eframe::App for YasaApp {
             },
         }
     }
+    
+    fn clear_color(&self, _visuals: &egui::Visuals) -> [f32; 4] {
+        egui::Color32::TRANSPARENT.to_normalized_gamma_f32()
+    }
 
 }
