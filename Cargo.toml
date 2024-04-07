@@ -19,7 +19,6 @@ arboard = "3.3.0"
 epaint = "0.22.0"   # egui paint module
 eframe = { version = "0.22.0", default-features = false, features = ["accesskit", "default_fonts", "glow"] }
 chrono = "0.4.1"
-ahash = "0.8.6"
 
 # Extra packages for notifications
 egui-toast = "0.8.1"
