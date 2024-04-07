@@ -88,9 +88,6 @@ impl YasaApp {
     }
 
     pub fn home_view(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
-        if ctx.input_mut(|i| i.consume_shortcut(&self.keyboard_shortcuts.test.unwrap())) {
-        }
-
         self.toasts.show(ctx);
 
         _frame.set_visible(true);
@@ -129,13 +126,13 @@ impl YasaApp {
                                 if let Some(clip) = self.clipboard.as_mut() {
                                     let image_buffer = self.painting.as_mut().unwrap().generate_rgba_image();
     
-                                    let ar_shitty_format =  arboard::ImageData {
+                                    let arboard_image =  arboard::ImageData {
                                         width: image_buffer.width() as usize,
                                         height: image_buffer.height() as usize,
                                         bytes: std::borrow::Cow::from(image_buffer.to_vec()),
                                     };
     
-                                    if clip.set_image(ar_shitty_format).is_ok() {
+                                    if clip.set_image(arboard_image).is_ok() {
                                         self.toasts = Toasts::new()
                                             .anchor(Align2::CENTER_BOTTOM, (0.0, -20.0))
                                             .direction(egui::Direction::BottomUp);
